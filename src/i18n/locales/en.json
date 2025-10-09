@@ -40,7 +40,15 @@
     }
   },
   "candies": {
-    "title": "Trick Or Treat"
+    "title": "Horrible delicious treats",
+    "items": {
+      "candy1": "Toffee",
+      "candy2": "Bone",
+      "candy3": "Scarecrow",
+      "candy4": "Candy Cane",
+      "candy5": "Pumpkin",
+      "candy6": "Ghost"
+    }
   },
   "decors": {
     "title": "Favorite Scare",

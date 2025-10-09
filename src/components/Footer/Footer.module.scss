@@ -18,7 +18,7 @@
   p {
     margin: 0;
     margin-top: 10px;
-    order: 2; /* текст під зображеннями на мобілці */
+    order: 2;
     width: 100%;
     text-align: center;
   }
@@ -63,17 +63,17 @@
     }
 
     p {
-      order: 0; /* текст між зображеннями на десктопі */
+      order: 0;
       width: auto;
       margin: 0;
     }
 
     .leftImage {
-      order: -1; /* зображення зліва */
+      order: -1;
     }
 
     .rightImage {
-      order: 1; /* зображення справа */
+      order: 1;
     }
   }
 
