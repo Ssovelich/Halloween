@@ -14,12 +14,12 @@ export const baseMetadata = {
     "October 31"
   ],
   openGraph: {
-    url: "https://halloween.vercel.app/",
+    url: "https://halloween-eosin.vercel.app/",
     siteName: "Halloween Magic",
     type: "website",
     images: [
       {
-        url: "https://halloween.vercel.app/images/og-image.png",
+        url: "https://halloween-eosin.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Halloween Magic"
@@ -28,9 +28,10 @@ export const baseMetadata = {
   },
   twitter: {
     card: "summary_large_image",
-    images: ["https://halloween.vercel.app/images/og-image.png"]
+    images: ["https://halloween-eosin.vercel.app/images/og-image.png"]
   },
   icons: {
     icon: "/images/logo.png"
   }
 };
+
