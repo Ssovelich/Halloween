@@ -1,5 +1,93 @@
 .footer {
-  text-align: center;
   padding: 40px 0;
-  color: #ccc;
+  color: var(--text);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .footerImages {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 60px;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 10px;
+    order: 2; /* текст під зображеннями на мобілці */
+    width: 100%;
+    text-align: center;
+  }
+
+  img {
+    max-width: 100px;
+    height: auto;
+    transition: transform 0.5s ease, opacity 1.5s ease;
+    cursor: pointer;
+    order: 1;
+  }
+
+  .leftImage {
+    &:hover {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  .rightImage {
+    &:hover {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+  }
+
+  .hidden {
+    opacity: 0 !important;
+    transform: translateY(-10px) !important;
+  }
+
+  @media screen and (min-width: 745px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+    .footerImages {
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    p {
+      order: 0; /* текст між зображеннями на десктопі */
+      width: auto;
+      margin: 0;
+    }
+
+    .leftImage {
+      order: -1; /* зображення зліва */
+    }
+
+    .rightImage {
+      order: 1; /* зображення справа */
+    }
+  }
+
+  @media screen and (max-width: 744px) {
+    flex-direction: column;
+
+    .footerImages {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    img {
+      max-width: 80px;
+    }
+  }
 }

@@ -91,7 +91,6 @@
     font-size: 1rem;
   }
 
-  /* Бургер-меню */
   .burger {
     display: none;
     flex-direction: column;
@@ -122,6 +121,15 @@
     }
   }
 
+  .mobileMenuImage {
+    display: none;
+
+    img {
+      max-width: 150px;
+      height: auto;
+    }
+  }
+
   @media screen and (max-width: 744px) {
     .nav {
       display: none;
@@ -137,6 +145,19 @@
       gap: 2rem;
       z-index: 99;
       overflow-y: auto;
+
+      .mobileMenuImage {
+        display: block;
+        margin-top: 30px; 
+        // text-align: right;
+
+        img {
+          display: block;
+          max-width: 120px;
+          height: auto;
+          animation: flicker 2s infinite;
+        }
+      }
     }
 
     .nav.active {
@@ -166,5 +187,14 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.4;
   }
 }

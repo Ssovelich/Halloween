@@ -11,7 +11,7 @@ const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [langLoaded, setLangLoaded] = useState(false); // щоб чекати завантаження мови
+  const [langLoaded, setLangLoaded] = useState(false);
 
   const toggleLang = () => {
     const newLang = i18n.language === "ua" ? "en" : "ua";
@@ -20,7 +20,6 @@ const Header = () => {
   };
 
   useEffect(() => {
-    // Міняємо мову лише на клієнті
     const savedLang = localStorage.getItem("lang");
     if (savedLang) {
       i18n.changeLanguage(savedLang).then(() => setLangLoaded(true));
@@ -50,7 +49,6 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   if (!langLoaded) {
-    // Щоб уникнути mismatch, не рендеримо контент, доки мова не завантажиться
     return null;
   }
 
@@ -77,6 +75,10 @@ const Header = () => {
           <button className={styles.langBtnMobile} onClick={toggleLang}>
             {i18n.language === "ua" ? "EN" : "UA"}
           </button>
+
+          <div className={styles.mobileMenuImage}>
+            <img src="/images/spider-web-grey.png" alt="Spider Web" />
+          </div>
         </nav>
 
         <button className={styles.langBtn} onClick={toggleLang}>
