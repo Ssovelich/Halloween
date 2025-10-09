@@ -19,7 +19,7 @@ export default function About() {
         {expanded && <p className={styles.extraText}>{t('home.about.extraText')}</p>}
 
         <button className={styles.toggleBtn} onClick={toggleExpand}>
-          {expanded ? t('home.about.button.hide') : t('home.about.button.knowMore')}
+         {expanded ? t("button.hide") : t("button.knowMore")}
         </button>
       </div>
 

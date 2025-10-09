@@ -27,6 +27,12 @@ body {
   height: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   margin: 0;
@@ -52,21 +58,24 @@ button {
 }
 
 .container {
-  width: 375px;
+  width: calc(100% - 40px);
+  max-width: 375px;
   padding-inline: 20px;
   margin-inline: auto;
 }
 
 @media screen and (min-width: 744px) {
   .container {
-    width: 744px;
+    width: calc(100% - 80px);
+     max-width: 744px;
     padding-inline: 40px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .container {
-    width: 1440px;
+    width: calc(100% - 144px);
+    max-width: 1440px;
     padding-inline: 72px;
   }
 }

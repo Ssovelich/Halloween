@@ -9,8 +9,7 @@
   @media screen and (min-width: 744px) {
     flex-direction: row;
     align-items: center;
-    gap: 20px;
-
+    
     &.reverse {
       flex-direction: row-reverse;
     }
@@ -29,7 +28,9 @@
 
   .textWrap {
     width: 100%;
+    max-width: 600px;
     color: var(--text);
+    word-wrap: break-word;
 
     h2 {
       font-size: 2rem;

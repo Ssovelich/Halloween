@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,6 +10,7 @@ const Header = () => {
   const { t, i18n } = useTranslation();
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleLang = () => {
     const newLang = i18n.language === "ua" ? "en" : "ua";
@@ -28,36 +29,56 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  useEffect(() => {
+  document.body.style.overflow = menuOpen ? "hidden" : "";
+}, [menuOpen]);
+
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`${styles.inner} container`}>
-        <Link href="/" className={styles.logo}>
+        <Link href="/" className={styles.logo} onClick={closeMenu}>
           <img src="/images/logo.png" alt="Logo" />
         </Link>
-        <nav className={styles.nav}>
-          <Link href="/" className={pathname === "/" ? styles.active : ""}>
+
+        <nav className={`${styles.nav} ${menuOpen ? styles.active : ""}`}>
+          <Link href="/" className={pathname === "/" ? styles.active : ""} onClick={closeMenu}>
             {t("nav.home")}
-            {pathname === "/" && <span className={styles.dot} />}
           </Link>
 
-          <Link
-            href="/candies"
-            className={pathname === "/candies" ? styles.active : ""}
-          >
+          <Link href="/candies" className={pathname === "/candies" ? styles.active : ""} onClick={closeMenu}>
             {t("nav.candies")}
-            {pathname === "/candies" && <span className={styles.dot} />}
           </Link>
 
-          <Link
-            href="/decors"
-            className={pathname === "/decors" ? styles.active : ""}
-          >
+          <Link href="/decors" className={pathname === "/decors" ? styles.active : ""} onClick={closeMenu}>
             {t("nav.decors")}
-            {pathname === "/decors" && <span className={styles.dot} />}
           </Link>
+
+          <button className={styles.langBtnMobile} onClick={toggleLang}>
+            {i18n.language === "ua" ? "EN" : "UA"}
+          </button>
         </nav>
+
         <button className={styles.langBtn} onClick={toggleLang}>
           {i18n.language === "ua" ? "EN" : "UA"}
+        </button>
+
+        <button
+          className={`${styles.burger} ${menuOpen ? styles.open : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Menu"
+        >
+          <span />
+          <span />
         </button>
       </div>
     </header>

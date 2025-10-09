@@ -7,32 +7,32 @@
   "header": {
     "lang": "EN"
   },
+  "button": {
+    "knowMore": "Know more",
+    "hide": "Hide details"
+  },
   "home": {
     "cards": [
       {
         "title": "Spooky Treats",
         "text": "Choose the best sweets...",
-        "btn": "Learn more"
+        "extraText": "Our Spooky Treats are handpicked with the spirit of Halloween in mind. From ghost-shaped chocolates to pumpkin spice candies, every bite is a magical experience. Perfect for trick-or-treaters and Halloween parties!"
       },
       {
         "title": "Haunted Decor",
         "text": "Create a spooky holiday atmosphere...",
-        "btn": "Learn more"
+        "extraText": "Transform your home into a haunted house! Explore creepy decorations, glowing lanterns, eerie props, and themed accessories that will make your Halloween unforgettable. Turn ordinary rooms into spook-tacular spaces!"
       },
       {
         "title": "Costume Ideas",
         "text": "The best costumes and ideas...",
-        "btn": "Learn more"
+        "extraText": "Discover costume inspirations for all ages and styles: witches, vampires, skeletons, and magical creatures. Whether for a party, contest, or personal fun, our ideas will help you stand out and enchant everyone."
       }
     ],
     "about": {
       "title": "About Halloween",
       "text": "Night of all the saints, or all the dead, is celebrated on October 31 and it is a very fun international celebration, this celebration comes from ancient origins, and is already celebrated by everyone.",
-      "extraText": "Halloween originated from the ancient Celtic festival of Samhain, where people lit bonfires and wore costumes to ward off ghosts. Today, it is celebrated with costumes, trick-or-treating, and spooky decorations across the globe, blending folklore with modern festivities.",
-      "button": {
-        "knowMore": "Know more",
-        "hide": "Hide details"
-      }
+      "extraText": "Halloween originated from the ancient Celtic festival of Samhain, where people lit bonfires and wore costumes to ward off ghosts. Today, it is celebrated with costumes, trick-or-treating, and spooky decorations across the globe, blending folklore with modern festivities."
     },
     "discount": {
       "text": "70% discount on Halloween day!",
