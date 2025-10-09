@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -11,6 +11,7 @@ const Header = () => {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langLoaded, setLangLoaded] = useState(false); // щоб чекати завантаження мови
 
   const toggleLang = () => {
     const newLang = i18n.language === "ua" ? "en" : "ua";
@@ -19,8 +20,13 @@ const Header = () => {
   };
 
   useEffect(() => {
+    // Міняємо мову лише на клієнті
     const savedLang = localStorage.getItem("lang");
-    if (savedLang) i18n.changeLanguage(savedLang);
+    if (savedLang) {
+      i18n.changeLanguage(savedLang).then(() => setLangLoaded(true));
+    } else {
+      setLangLoaded(true);
+    }
   }, [i18n]);
 
   useEffect(() => {
@@ -38,10 +44,15 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-  document.body.style.overflow = menuOpen ? "hidden" : "";
-}, [menuOpen]);
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
+
+  if (!langLoaded) {
+    // Щоб уникнути mismatch, не рендеримо контент, доки мова не завантажиться
+    return null;
+  }
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
