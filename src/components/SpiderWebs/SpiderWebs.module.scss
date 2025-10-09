@@ -1,0 +1,42 @@
+.websContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.web {
+  position: absolute;
+  opacity: 0;
+  transform: scale(0.5) rotate(0deg);
+  animation: appear var(--appear-duration, 4s) ease-in-out forwards;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+}
+
+/* Атмосферна анімація появи/зникнення */
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  15% {
+    opacity: 0.8;
+    transform: scale(1) rotate(5deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) rotate(-5deg);
+  }
+  85% {
+    opacity: 0.7;
+    transform: scale(1) rotate(3deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+}

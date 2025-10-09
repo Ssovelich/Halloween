@@ -1,0 +1,102 @@
+.discount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 16px;
+  background: linear-gradient(
+    136deg,
+    hsl(104, 28%, 35%) 0%,
+    hsl(58, 28%, 35%) 100%
+  );
+  opacity: 0.9;
+  overflow: hidden;
+  position: relative;
+  margin: 60px 0;
+
+  @media screen and (min-width: 744px) {
+    flex-direction: row;
+    text-align: left;
+    padding: 60px;
+    justify-content: space-between;
+  }
+
+  .imageWrap {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    @media screen and (min-width: 744px) {
+      justify-content: flex-start;
+    }
+  }
+
+  .textWrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      animation: flicker 2s infinite ease-in-out;
+
+      @media screen and (min-width: 744px) {
+        font-size: 2.5rem;
+      }
+
+      @media screen and (min-width: 1440px) {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  // Анімація тексту
+  @keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 5px #ff6b00, 0 0 10px #ff6b00, 0 0 20px #ff6b00,
+        0 0 40px #ff6b00;
+    }
+
+    20%,
+    24%,
+    55% {
+      opacity: 0.6;
+      text-shadow: none;
+    }
+  }
+
+  // Анімація зображення
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}

@@ -34,7 +34,10 @@
         "hide": "Hide details"
       }
     },
-    "discount": "20% OFF everything!"
+    "discount": {
+      "text": "70% discount on Halloween day!",
+      "alt": "Halloween discount"
+    }
   },
   "candies": {
     "title": "Trick Or Treat"

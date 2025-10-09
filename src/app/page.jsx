@@ -1,6 +1,7 @@
 'use client';
 
 import About from '@/components/About/About';
+import Discount from '@/components/Discount/Discount';
 import SplitCard from '@/components/SplitCard/SplitCard';
 import { useTranslation } from 'react-i18next';
 
@@ -23,6 +24,7 @@ const Home = () => {
       />
     ))}
     <About />
+    <Discount />
   </main>
   );
 }
