@@ -1,0 +1,46 @@
+{
+  "nav": {
+    "home": "Home",
+    "candies": "Candies",
+    "decors": "Decors"
+  },
+  "header": {
+    "lang": "EN"
+  },
+  "home": {
+    "cards": [
+      {
+        "title": "Spooky Treats",
+        "text": "Choose the best sweets...",
+        "btn": "Learn more"
+      },
+      {
+        "title": "Haunted Decor",
+        "text": "Create a spooky holiday atmosphere...",
+        "btn": "Learn more"
+      },
+      {
+        "title": "Costume Ideas",
+        "text": "The best costumes and ideas...",
+        "btn": "Learn more"
+      }
+    ],
+    "about": {
+      "title": "About Halloween",
+      "text": "Night of all the saints, or all the dead, is celebrated on October 31 and it is a very fun international celebration, this celebration comes from ancient origins, and is already celebrated by everyone.",
+      "extraText": "Halloween originated from the ancient Celtic festival of Samhain, where people lit bonfires and wore costumes to ward off ghosts. Today, it is celebrated with costumes, trick-or-treating, and spooky decorations across the globe, blending folklore with modern festivities.",
+      "button": {
+        "knowMore": "Know more",
+        "hide": "Hide details"
+      }
+    },
+    "discount": "20% OFF everything!"
+  },
+  "candies": {
+    "title": "Trick Or Treat"
+  },
+  "decors": {
+    "title": "Favorite Scare",
+    "back": "Back to categories"
+  }
+}

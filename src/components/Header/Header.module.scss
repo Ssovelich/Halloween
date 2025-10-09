@@ -1,0 +1,64 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  &.scrolled {
+    background: rgba(12, 12, 16, 0.223);
+    backdrop-filter: blur(6px);
+  }
+
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+
+    .logo img {
+      height: 44px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 3rem;
+      position: relative;
+      a {
+        position: relative;
+        color: var(--text);
+        text-decoration: none;
+        padding-bottom: 4px;
+        &:hover {
+          opacity: 0.85;
+        }
+      }
+    }
+    .active {
+      font-weight: bold;
+    }
+    .dot {
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--text);
+      border-radius: 50%;
+    }
+  }
+
+  .langBtn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--text);
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}

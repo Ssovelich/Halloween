@@ -1,0 +1,60 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  
+  margin: 60px 0;
+
+  @media screen and (min-width: 744px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .imageWrap {
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+  }
+
+  .textWrap {
+    width: 100%;
+    color: var(--text);
+
+    h2 {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .button {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background-color: #ff8533;
+      }
+    }
+  }
+}
