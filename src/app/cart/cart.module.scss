@@ -1,0 +1,171 @@
+.title {
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.empty {
+  text-align: center;
+  color: #fff;
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .backButton {
+    background: linear-gradient(
+      136deg,
+      hsl(104, 28%, 35%) 0%,
+      hsl(58, 28%, 35%) 100%
+    );
+    padding: 0.8rem 1.5rem;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(
+        136deg,
+        hsl(104, 38%, 45%) 0%,
+        hsl(58, 38%, 45%) 100%
+      );
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.item {
+  background: linear-gradient(
+    136deg,
+    hsl(104, 28%, 35%) 0%,
+    hsl(58, 28%, 35%) 100%
+  );
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  .image {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+
+  .info {
+    flex-grow: 1;
+
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin: 0.2rem 0;
+    }
+
+    .total {
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .remove {
+    background: red;
+    color: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.summary {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  color: #fff;
+  text-align: center;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .orderButton {
+    background: green;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #2ac12a;
+    }
+  }
+
+  .clearButton {
+    background: red;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: #d33;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .image {
+      width: 100%;
+      height: auto;
+    }
+
+    .remove {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}

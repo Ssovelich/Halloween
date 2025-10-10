@@ -72,6 +72,10 @@ const Header = () => {
             {t("nav.decors")}
           </Link>
 
+           <Link href="/cart" className={pathname === "/cart" ? styles.active : ""} onClick={closeMenu}>
+            {t("nav.cart")}
+          </Link>
+
           <button className={styles.langBtnMobile} onClick={toggleLang}>
             {i18n.language === "ua" ? "EN" : "UA"}
           </button>

@@ -2,7 +2,8 @@
   "nav": {
     "home": "Home",
     "candies": "Candies",
-    "decors": "Decors"
+    "decors": "Decors",
+    "cart": "Cart"
   },
   "header": {
     "lang": "EN"
@@ -53,5 +54,19 @@
   "decors": {
     "title": "Favorite Scare",
     "back": "Back to categories"
+  },
+  "cart": {
+    "title": "🛒 Your Cart",
+    "empty": "Your cart is empty 😢",
+    "backButton": "Return to home page",
+    "quantity": "Quantity",
+    "pricePerItem": "Price per item",
+    "totalPerItem": "Total per item",
+    "remove": "Remove item",
+    "total": "Total",
+    "orderButton": "Place Order",
+    "clearButton": "Clear Cart",
+    "orderPlaced": "Order placed successfully!",
+    "checkout": "Proceed to Checkout"
   }
 }
