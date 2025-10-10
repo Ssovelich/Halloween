@@ -3,45 +3,25 @@
   margin-top: 110px;
   margin-bottom: 2rem;
   font-size: 2rem;
-  color: #fff;
+  color: var(--text);
 }
 
 .empty {
   text-align: center;
-  color: #fff;
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .backButton {
-    background: linear-gradient(
-      136deg,
-      hsl(104, 28%, 35%) 0%,
-      hsl(58, 28%, 35%) 100%
-    );
-    padding: 0.8rem 1.5rem;
-    color: #fff;
-    border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: linear-gradient(
-        136deg,
-        hsl(104, 38%, 45%) 0%,
-        hsl(58, 38%, 45%) 100%
-      );
-    }
-  }
+  color: var(--accent);
+  font-size: 1.5rem;
+  background: linear-gradient(
+    136deg,
+    hsl(104, 28%, 35%) 0%,
+    hsl(58, 28%, 35%) 100%
+  );
+border-radius: 15px;
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -54,51 +34,78 @@
   border-radius: 15px;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
   padding: 1rem;
-  color: #fff;
+  color: var(--text);
+  gap: 1rem;
   position: relative;
   overflow: hidden;
+}
 
-  .image {
-    width: 90px;
-    height: 90px;
-    border-radius: 10px;
-    object-fit: cover;
-  }
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+}
 
-  .info {
-    flex-grow: 1;
+.name {
+  flex: 2;
+  font-size: 1.1rem;
+}
 
-    h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
-    p {
-      margin: 0.2rem 0;
-    }
-
-    .total {
-      font-weight: bold;
-      margin-top: 0.5rem;
-    }
-  }
-
-  .remove {
-    background: red;
-    color: #fff;
+  button {
+    background: #444;
+    color: var(--text);
     border: none;
-    width: 35px;
-    height: 35px;
-    font-size: 1.2rem;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    font-size: 1rem;
+    transition: background 0.2s ease;
 
     &:hover {
-      transform: scale(1.1);
+      background: #555;
     }
+  }
+
+  span {
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
+.price {
+  flex: 1;
+  text-align: right;
+  font-weight: bold;
+}
+
+.remove {
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 4px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0.8;
+
+  img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  &:hover {
+    transform: scale(1.15);
+    opacity: 1;
   }
 }
 
@@ -106,12 +113,13 @@
   background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   padding: 1.5rem;
-  color: #fff;
+  color: var(--text);
   text-align: center;
 
-  h3 {
-    font-size: 1.5rem;
+  .total {
+    font-size: 1.4rem;
     margin-bottom: 1rem;
+    font-weight: bold;
   }
 
   .buttons {
@@ -121,33 +129,33 @@
     flex-wrap: wrap;
   }
 
-  .orderButton {
-    background: green;
-    color: #fff;
+  .orderButton,
+  .clearButton {
+    flex: 1;
+    min-width: 120px;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
     transition: background 0.3s ease;
+  }
+
+  .orderButton {
+    background: var(--accent);
+    color: var(--text);
 
     &:hover {
-      background: #2ac12a;
+      background: #ff8533;
     }
   }
 
   .clearButton {
-    background: red;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    background: var(--accent);
+    color: var(--text);
 
     &:hover {
-      background: #d33;
+      background: #ff8533;
     }
   }
 }
@@ -156,16 +164,25 @@
   .item {
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
+  }
 
-    .image {
-      width: 100%;
-      height: auto;
-    }
+  .price {
+    text-align: left;
+    margin-top: 0.5rem;
+  }
 
-    .remove {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+  .quantityControls {
+    margin-top: 0.5rem;
+  }
+
+  .remove {
+    top: 8px;
+    right: 8px;
+
+    img {
+      width: 20px;
+      height: 20px;
     }
   }
 }

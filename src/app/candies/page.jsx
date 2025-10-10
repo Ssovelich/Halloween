@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import { useTranslation } from "react-i18next";
 import styles from "./candies.module.scss";
 import useCart from "@/hooks/useCart";
 import toast, { Toaster } from "react-hot-toast";
+import { toastOptions } from "@/styles/toastStyles";
 
 const candies = [
   { id: 1, key: "candy1", price: 5, image: "/images/toffee.png" },
@@ -20,12 +21,16 @@ const Candies = () => {
 
   const handleAddToCart = (candy) => {
     addToCart(candy);
-    toast.success(`${t(`candies.items.${candy.key}`)} ${t("candies.added")}`);
+    toast.success(`"${t(`candies.items.${candy.key}`)}" ${t("candies.added")}`);
   };
 
   return (
     <main className="container">
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={toastOptions}
+      />
       <h1 className={styles.title}>{t("candies.title")}</h1>
 
       <div className={styles.grid}>

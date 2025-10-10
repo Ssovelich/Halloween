@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import styles from './cart.module.scss';
+import { toastOptions } from '@/styles/toastStyles';
+import Loader from '@/components/Loader/Loader';
 
 const CartPage = () => {
   const { t } = useTranslation();
@@ -30,6 +32,21 @@ const CartPage = () => {
     updateCart(updatedCart);
   };
 
+  const removeFromCart = (id) => {
+  const item = cart.find((item) => item.id === id);
+  const updatedCart = cart.filter((item) => item.id !== id);
+  updateCart(updatedCart);
+
+  if (item) {
+    toast.success(`"${t(`candies.items.${item.key}`)}" ${t("cart.removed")}`);
+  }
+};
+
+  const clearCart = () => {
+    updateCart([]);
+    toast.success(t('cart.cleared'));
+  };
+
   const total = cart.reduce(
     (sum, item) => sum + item.price * (item.quantity || 1),
     0
@@ -37,14 +54,14 @@ const CartPage = () => {
 
   const handleOrder = () => {
     if (cart.length === 0) return;
-    toast.success(t('cart.orderSuccess'));
+    toast.success(t('cart.orderPlaced'));
     localStorage.removeItem('cart');
     setCart([]);
   };
 
   return (
     <main className="container">
-      <Toaster position="top-right" reverseOrder={false} />
+      <Toaster position="top-right" reverseOrder={false} toastOptions={toastOptions} />
       <h1 className={styles.title}>{t('cart.title')}</h1>
 
       {cart.length === 0 ? (
@@ -75,6 +92,14 @@ const CartPage = () => {
                 <span className={styles.price}>
                   ${(item.price * (item.quantity || 1)).toFixed(2)}
                 </span>
+
+                <button
+                  className={styles.remove}
+                  onClick={() => removeFromCart(item.id)}
+                  title={t('cart.remove')}
+                >
+                  <img src="/images/removed.png" alt="Remove" />
+                </button>
               </li>
             ))}
           </ul>
@@ -84,14 +109,21 @@ const CartPage = () => {
               {t('cart.total')}: <strong>${total.toFixed(2)}</strong>
             </p>
 
-            <button className={styles.orderButton} onClick={handleOrder}>
-              {t('cart.checkout')}
-            </button>
+            <div className={styles.buttons}>
+              <button className={styles.orderButton} onClick={handleOrder}>
+                {t('cart.checkout')}
+              </button>
+
+              <button className={styles.clearButton} onClick={clearCart}>
+                {t('cart.clearButton')}
+              </button>
+            </div>
           </div>
         </>
       )}
+      <Loader />
     </main>
   );
-}
+};
 
 export default CartPage;
