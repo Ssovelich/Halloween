@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import styles from './cart.module.scss';
 import { toastOptions } from '@/styles/toastStyles';
-import Loader from '@/components/Loader/Loader';
 
 const CartPage = () => {
   const { t } = useTranslation();
@@ -121,7 +120,6 @@ const CartPage = () => {
           </div>
         </>
       )}
-      <Loader />
     </main>
   );
 };

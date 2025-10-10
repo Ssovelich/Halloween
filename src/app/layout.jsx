@@ -2,7 +2,7 @@ import "@/styles/globals.scss";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
 import SpiderWebs from "@/components/SpiderWebs/SpiderWebs";
-import Loader from "@/components/Loader/Loader";
+import RouteLoaderWrapper from "@/components/RouteLoaderWrapper";
 import { baseMetadata } from "@/metadata/metadata";
 import I18nProvider from "@/providers/I18nProvider";
 
@@ -15,8 +15,9 @@ export default function RootLayout({ children }) {
         <I18nProvider>
           <SpiderWebs />
           <Header />
-          {/* <Loader /> */}
-          <main>{children}</main>
+          <RouteLoaderWrapper>
+            <main>{children}</main>
+          </RouteLoaderWrapper>
           <Footer />
         </I18nProvider>
       </body>
