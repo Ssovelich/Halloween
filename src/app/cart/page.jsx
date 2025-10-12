@@ -37,7 +37,7 @@ const CartPage = () => {
   updateCart(updatedCart);
 
   if (item) {
-    toast.success(`"${t(`candies.items.${item.key}`)}" ${t("cart.removed")}`);
+    toast.success(`"${t(`${item.category}.items.${item.key}`)}" ${t("cart.removed")}`);
   }
 };
 
@@ -79,7 +79,7 @@ const CartPage = () => {
                 />
 
                 <span className={styles.name}>
-                  {t(`candies.items.${item.key}`)}
+                  {t(`${item.category}.items.${item.key}`)}
                 </span>
 
                 <div className={styles.quantityControls}>

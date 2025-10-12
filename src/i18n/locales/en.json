@@ -43,6 +43,7 @@
   "candies": {
     "title": "Horrible delicious treats",
     "added": "added to cart",
+    "addToCart": "Add to cart",
     "items": {
       "candy1": "Toffee",
       "candy2": "Bone",
@@ -53,8 +54,17 @@
     }
   },
   "decors": {
-    "title": "Favorite Scare",
-    "back": "Back to categories"
+    "title": "Spooky Decorations",
+    "added": "added to cart!",
+    "addToCart": "Add to cart",
+    "items": {
+      "decor1": "Spider Web",
+      "decor2": "Candle",
+      "decor3": "Bat Decor",
+      "decor4": "Lantern",
+      "decor5": "Tombstone",
+      "decor6": "Tombstone"
+    }
   },
   "cart": {
     "title": "🛒 Your Cart",
