@@ -38,8 +38,10 @@ const ProductList = ({ title, translationKey, items }) => {
               src={item.image}
               alt={t(`${translationKey}.items.${item.key}`)}
             />
-            <h3>{t(`${translationKey}.items.${item.key}`)}</h3>
-            <p className={styles.price}>${item.price}</p>
+            <div className={styles.info}>
+              <h3>{t(`${translationKey}.items.${item.key}`)}</h3>
+              <p className={styles.price}>${item.price}</p>
+            </div>
 
             <button
               className={styles.cartButton}

@@ -22,6 +22,7 @@ const Home = () => {
         {Array.isArray(cards) && cards.map((c, i) => (
           <SplitCard
             key={i}
+            index={i}
             image={images[i]}
             title={c.title}
             text={c.text}

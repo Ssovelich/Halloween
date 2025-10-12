@@ -33,6 +33,10 @@
   overflow: hidden;
   color: var(--text);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 
   img {
     width: 100%;
@@ -54,6 +58,9 @@
   .price {
     font-weight: bold;
     margin-bottom: 1rem;
+  }
+   .info {
+    margin-top: auto;
   }
 
   .cartButton {

@@ -3,13 +3,21 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  
   margin: 60px 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   @media screen and (min-width: 744px) {
     flex-direction: row;
     align-items: center;
-    
+
     &.reverse {
       flex-direction: row-reverse;
     }
@@ -17,13 +25,20 @@
 
   .imageWrap {
     width: 100%;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: auto;
       border-radius: 16px;
       object-fit: cover;
+      transform: scale(0.95);
+      transition: transform 1s ease;
     }
+  }
+
+  &.visible .imageWrap img {
+    transform: scale(1);
   }
 
   .textWrap {
@@ -36,26 +51,38 @@
       font-size: 2rem;
       color: var(--accent);
       margin-bottom: 1rem;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      transform: translateY(10px);
+      opacity: 0;
     }
 
     p {
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 1.5rem;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      transform: translateY(10px);
+      opacity: 0;
     }
 
     .button {
       background-color: var(--accent);
-      color: #fff;
+      color: var(--text);
       border: none;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       cursor: pointer;
       transition: background 0.3s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+  }
 
-      &:hover {
-        background-color: #ff8533;
-      }
+  &.visible .textWrap {
+    h2, p, .button {
+      transform: translateY(0);
+      opacity: 1;
+      transition-delay: 0.3s;
     }
   }
 }
