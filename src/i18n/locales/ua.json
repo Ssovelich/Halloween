@@ -57,12 +57,12 @@
     "added": "додано до кошика!",
     "addToCart": "Додати до кошика",
     "items": {
-      "decor1": "Spider Web",
-      "decor2": "Candle",
-      "decor3": "Bat Decor",
-      "decor4": "Lantern",
-      "decor5": "Tombstone",
-      "decor6": "Tombstone"
+      "decor1": "Відьмацький капелюх",
+      "decor2": "Спочивай з миром",
+      "decor3": "Жахлива кришталева куля",
+      "decor4": "Відьмацька мітла",
+      "decor5": "Будинок з привидами",
+      "decor6": "Свічка на Хелловін"
     }
   },
   "cart": {

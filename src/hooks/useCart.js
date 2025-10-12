@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 
-export default function useCart() {
+const useCart = () => {
   const [cart, setCart] = useState(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("cart");
@@ -17,12 +17,18 @@ export default function useCart() {
 
   const addToCart = (item) => {
     setCart((prev) => {
-      const existing = prev.find((c) => c.id === item.id);
+      const existing = prev.find(
+        (c) => c.id === item.id && c.category === item.category
+      );
+
       if (existing) {
         return prev.map((c) =>
-          c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c
+          c.id === item.id && c.category === item.category
+            ? { ...c, quantity: c.quantity + 1 }
+            : c
         );
       }
+
       return [...prev, { ...item, quantity: 1 }];
     });
   };
@@ -43,14 +49,22 @@ export default function useCart() {
 
   const decreaseQuantity = (id) => {
     setCart((prev) =>
-      prev
-        .map((item) =>
-          item.id === id
-            ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
-            : item
-        )
+      prev.map((item) =>
+        item.id === id
+          ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+          : item
+      )
     );
   };
 
-  return { cart, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity };
+  return {
+    cart,
+    addToCart,
+    removeFromCart,
+    clearCart,
+    increaseQuantity,
+    decreaseQuantity,
+  };
 }
+
+export default useCart;

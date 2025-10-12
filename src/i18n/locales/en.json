@@ -58,12 +58,12 @@
     "added": "added to cart!",
     "addToCart": "Add to cart",
     "items": {
-      "decor1": "Spider Web",
-      "decor2": "Candle",
-      "decor3": "Bat Decor",
-      "decor4": "Lantern",
-      "decor5": "Tombstone",
-      "decor6": "Tombstone"
+      "decor1": "Witch Hat",
+      "decor2": "Rip",
+      "decor3": "Terrifying Crystal Ball",
+      "decor4": "Witch Broom",
+      "decor5": "Haunted House",
+      "decor6": "Halloween Candle"
     }
   },
   "cart": {
