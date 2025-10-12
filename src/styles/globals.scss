@@ -20,11 +20,22 @@ body {
     hsl(58, 28%, 40%) 100%
   );
   color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   min-height: 100vh;
 }
 
 #__next {
   height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
 }
 
 *,
@@ -33,7 +44,12 @@ body {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -67,7 +83,7 @@ button {
 @media screen and (min-width: 744px) {
   .container {
     width: calc(100% - 80px);
-     max-width: 744px;
+    max-width: 744px;
     padding-inline: 40px;
   }
 }
