@@ -6,6 +6,7 @@ import RouteLoaderWrapper from "@/components/RouteLoaderWrapper";
 import { baseMetadata } from "@/metadata/metadata";
 import I18nProvider from "@/providers/I18nProvider";
 import GlobalAudio from "@/components/GlobalAudio/GlobalAudio";
+import ScrollToTop from "@/components/ScrollToTop/ScrollToTop";
 
 export const metadata = baseMetadata;
 
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
             <main>{children}</main>
           </RouteLoaderWrapper>
           <Footer />
+          <ScrollToTop />
         </I18nProvider>
       </body>
     </html>
