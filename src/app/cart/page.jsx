@@ -1,49 +1,58 @@
-'use client';
+"use client";
 
-import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast';
-import styles from './cart.module.scss';
-import { toastOptions } from '@/styles/toastStyles';
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
+import styles from "./cart.module.scss";
+import { toastOptions } from "@/styles/toastStyles";
 
 const CartPage = () => {
   const { t } = useTranslation();
   const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCart(storedCart);
   }, []);
 
   const updateCart = (newCart) => {
     setCart(newCart);
-    localStorage.setItem('cart', JSON.stringify(newCart));
+    localStorage.setItem("cart", JSON.stringify(newCart));
   };
 
   const changeQuantity = (id, delta) => {
-    const updatedCart = cart
-      .map((item) =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, (item.quantity || 1) + delta) }
-          : item
-      )
-      .filter((item) => item.quantity > 0);
+    const updatedCart = cart.flatMap((item) => {
+      if (item.id === id) {
+        const newQuantity = (item.quantity || 1) + delta;
+        if (newQuantity <= 0) {
+          toast.success(
+            `"${t(`${item.category}.items.${item.key}`)}" ${t("cart.removed")}`
+          );
+          return [];
+        }
+        return { ...item, quantity: newQuantity };
+      }
+      return item;
+    });
+
     updateCart(updatedCart);
   };
 
   const removeFromCart = (id) => {
-  const item = cart.find((item) => item.id === id);
-  const updatedCart = cart.filter((item) => item.id !== id);
-  updateCart(updatedCart);
+    const item = cart.find((item) => item.id === id);
+    const updatedCart = cart.filter((item) => item.id !== id);
+    updateCart(updatedCart);
 
-  if (item) {
-    toast.success(`"${t(`${item.category}.items.${item.key}`)}" ${t("cart.removed")}`);
-  }
-};
+    if (item) {
+      toast.success(
+        `"${t(`${item.category}.items.${item.key}`)}" ${t("cart.removed")}`
+      );
+    }
+  };
 
   const clearCart = () => {
     updateCart([]);
-    toast.success(t('cart.cleared'));
+    toast.success(t("cart.cleared"));
   };
 
   const total = cart.reduce(
@@ -53,18 +62,22 @@ const CartPage = () => {
 
   const handleOrder = () => {
     if (cart.length === 0) return;
-    toast.success(t('cart.orderPlaced'));
-    localStorage.removeItem('cart');
+    toast.success(t("cart.orderPlaced"));
+    localStorage.removeItem("cart");
     setCart([]);
   };
 
   return (
     <main className="container">
-      <Toaster position="top-right" reverseOrder={false} toastOptions={toastOptions} />
-      <h1 className={styles.title}>{t('cart.title')}</h1>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={toastOptions}
+      />
+      <h1 className={styles.title}>{t("cart.title")}</h1>
 
       {cart.length === 0 ? (
-        <p className={styles.empty}>{t('cart.empty')}</p>
+        <p className={styles.empty}>{t("cart.empty")}</p>
       ) : (
         <>
           <ul className={styles.list}>
@@ -95,7 +108,7 @@ const CartPage = () => {
                 <button
                   className={styles.remove}
                   onClick={() => removeFromCart(item.id)}
-                  title={t('cart.remove')}
+                  title={t("cart.remove")}
                 >
                   <img src="/images/removed.png" alt="Remove" />
                 </button>
@@ -105,16 +118,16 @@ const CartPage = () => {
 
           <div className={styles.summary}>
             <p className={styles.total}>
-              {t('cart.total')}: <strong>${total.toFixed(2)}</strong>
+              {t("cart.total")}: <strong>${total.toFixed(2)}</strong>
             </p>
 
             <div className={styles.buttons}>
               <button className={styles.orderButton} onClick={handleOrder}>
-                {t('cart.checkout')}
+                {t("cart.checkout")}
               </button>
 
               <button className={styles.clearButton} onClick={clearCart}>
-                {t('cart.clearButton')}
+                {t("cart.clearButton")}
               </button>
             </div>
           </div>
