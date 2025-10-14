@@ -5,6 +5,7 @@ import SpiderWebs from "@/components/SpiderWebs/SpiderWebs";
 import RouteLoaderWrapper from "@/components/RouteLoaderWrapper";
 import { baseMetadata } from "@/metadata/metadata";
 import I18nProvider from "@/providers/I18nProvider";
+import GlobalAudio from "@/components/GlobalAudio/GlobalAudio";
 
 export const metadata = baseMetadata;
 
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       <body>
         <I18nProvider>
           <SpiderWebs />
+          <GlobalAudio />
           <Header />
           <RouteLoaderWrapper>
             <main>{children}</main>
