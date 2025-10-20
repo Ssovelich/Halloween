@@ -1,6 +1,6 @@
 # 🎃 Halloween Store — Motörшно гарний проєкт на Next.js  
 
-![Halloween Store Screenshot](./public/og-image.png)
+![Halloween Store Screenshot](./public/images/og-image.png)
 
 ---
 
@@ -48,6 +48,7 @@ The app includes:
 💀 Автор / Author
 
 Розроблено з любов’ю до темряви й краси 🖤
+
 Crafted with love for the dark and beautiful.
 https://github.com/Ssovelich
 
