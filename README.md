@@ -4,7 +4,7 @@
 
 ---
 
-## 🇺🇦 Опис проєкту  
+## Опис проєкту  
 **Halloween Store** — це атмосферний веб-додаток, створений на **Next.js** зі **стилями через SCSS-модулі**.  
 Сайт занурює користувачів у світ Геловіну завдяки **моторошно гарним анімаціям**, **звуковому супроводу** та стильному дизайну, що поєднує темряву й елегантність.  
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 🇬🇧 Project Description  
+## Project Description  
 **Halloween Store** is a spooky and stylish web app built with **Next.js** and **CSS Modules**.  
 It immerses users in the Halloween spirit through **creepy-beautiful animations**, **sound effects**, and a dark yet elegant visual style.  
 
