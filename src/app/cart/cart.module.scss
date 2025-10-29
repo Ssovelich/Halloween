@@ -15,7 +15,7 @@
     hsl(104, 28%, 35%) 0%,
     hsl(58, 28%, 35%) 100%
   );
-border-radius: 15px;
+  border-radius: 15px;
 }
 
 .list {
@@ -87,15 +87,21 @@ border-radius: 15px;
 }
 
 .remove {
-  background: transparent;
+  background: #ff4444;
   border: none;
+  border-bottom-left-radius: 12px;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  padding: 4px;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  opacity: 0.8;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  opacity: 0.9;
+  z-index: 2;
 
   img {
     width: 22px;
@@ -104,8 +110,14 @@ border-radius: 15px;
   }
 
   &:hover {
-    transform: scale(1.15);
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
     opacity: 1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
   }
 }
 
@@ -124,7 +136,9 @@ border-radius: 15px;
 
   .buttons {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
   }
@@ -132,7 +146,9 @@ border-radius: 15px;
   .orderButton,
   .clearButton {
     flex: 1;
+    width: 100%;
     min-width: 120px;
+    max-width: 600px;
     padding: 0.8rem 1.5rem;
     border: none;
     border-radius: 10px;
@@ -177,12 +193,16 @@ border-radius: 15px;
   }
 
   .remove {
-    top: 8px;
-    right: 8px;
-
     img {
       width: 20px;
       height: 20px;
     }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .orderButton,
+  .clearButton {
+    font-size: 1.1rem;
   }
 }
