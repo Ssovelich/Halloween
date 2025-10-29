@@ -197,3 +197,18 @@
     opacity: 0.4;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .header {
+    .nav {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+
+    .langBtn {
+      font-size: 1.13rem;
+      padding: 0.5rem 0.9rem;
+    }
+  }
+}

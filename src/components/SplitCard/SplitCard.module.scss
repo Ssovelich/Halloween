@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  gap: 20px;
   justify-content: flex-start;
   margin: 60px 0;
+  padding: 0;
+  width: 100%;
 
   opacity: 0;
   transform: translateY(20px);
@@ -67,6 +70,7 @@
 
     .button {
       background-color: var(--accent);
+      width: 100%;
       color: var(--text);
       border: none;
       padding: 0.75rem 1.5rem;
@@ -86,3 +90,20 @@
     }
   }
 }
+
+ @media screen and (min-width: 1440px) {
+    .textWrap {
+      h2 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      .button {
+        font-size: 1.1rem;
+      }
+    }
+  }
+

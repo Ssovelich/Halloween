@@ -36,6 +36,7 @@
       background-color: var(--accent);
       color: #fff;
       border: none;
+      width: 100%;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       cursor: pointer;
@@ -63,9 +64,16 @@
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .toggleBtn {
+    font-size: 1.1rem;
+  }
+}
+
 /* ===== Анімація руху зображення ===== */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {

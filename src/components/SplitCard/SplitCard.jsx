@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
@@ -30,7 +30,9 @@ const SplitCard = ({ image, title, text, extraText, reverse, index }) => {
   return (
     <section
       ref={cardRef}
-      className={`${styles.card} ${reverse ? styles.reverse : ""} container ${visible ? styles.visible : ""}`}
+      className={`${styles.card} ${reverse ? styles.reverse : ""} container ${
+        visible ? styles.visible : ""
+      }`}
       style={{ transitionDelay: `${index * 0.2}s` }}
     >
       <div className={styles.imageWrap}>
@@ -39,7 +41,10 @@ const SplitCard = ({ image, title, text, extraText, reverse, index }) => {
 
       <div className={styles.textWrap}>
         <h2>{title}</h2>
-        <p>{text}</p>
+        <p>
+          {text}
+          {expanded ? "." : "..."}
+        </p>
 
         {expanded && <p className={styles.extraText}>{extraText}</p>}
 
@@ -49,6 +54,6 @@ const SplitCard = ({ image, title, text, extraText, reverse, index }) => {
       </div>
     </section>
   );
-}
+};
 
 export default SplitCard;
